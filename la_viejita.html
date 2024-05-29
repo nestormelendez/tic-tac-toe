@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./la_viejita.css">
 </head>
+
 <body>
     <main class="main">
         <header class="header">
@@ -16,7 +18,8 @@
             <article class="teams">
                 <div class="player">
                     <div class="users">
-                        <select  name="input-name-player-1" class="input-name-player-1 text-shadow" id="input-name-player-1">
+                        <select name="input-name-player-1" class="input-name-player-1 text-shadow"
+                            id="input-name-player-1">
                             <option value="" disabled selected>Jugador 1</option>
                             <option value="Firulais">Firulais</option>
                             <option value="Gasper">Gasper</option>
@@ -27,14 +30,14 @@
                         <button class="btn btn-player-1 text-shadow">ingresar</button>
                     </div>
                     <div id="info-player-1" class="info-player-1">
-                       <!--  <img id="image-player-1" class="imge-players shadow" src="./assets/firulais.webp" alt="player-1">
+                        <!--  <img id="image-player-1" class="imge-players shadow" src="./assets/firulais.webp" alt="player-1">
                         <h2 id="name-player-1">jugador1</h2>
                         <span id="win-player-1" >victorias 0</span>
                         <span id="lose-player-1">derrotas 0</span> -->
                     </div>
                 </div>
             </article>
-            <article class="play-ground"> 
+            <article class="play-ground">
                 <div class="table">
                     <div class="table-div place-1" data-div="0"></div>
                     <div class="table-div place-2" data-div="1"></div>
@@ -50,7 +53,8 @@
             <article class="teams">
                 <div class="player --player2">
                     <div class="users">
-                        <select name="input-name-player-2" class="input-name-player-2 text-shadow" id="input-name-player-2">
+                        <select name="input-name-player-2" class="input-name-player-2 text-shadow"
+                            id="input-name-player-2">
                             <option value="" disabled selected>Jugador 2</option>
                             <option value="Firulais">Firulais</option>
                             <option value="Gasper">Gasper</option>
@@ -69,8 +73,15 @@
             </article>
         </section>
         <footer class="footer">
-programmed by Nestor Melendez</footer>
+            programmed by Nestor Melendez</footer>
+        <div is="modal" class="modal">
+            <div class="modal-container">
+                <h2>El ganador es playerActive</h2>
+                <button>Nuevo juego</button>
+            </div>
+        </div>
     </main>
     <script src="./la_viejita.js"></script>
 </body>
+
 </html>

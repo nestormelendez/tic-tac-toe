@@ -55,14 +55,20 @@
 .player {
   margin: 10px;
   height: 100px;
-  background-color: red;
+  background-color: transparent;
+  box-shadow: 0px 0px 10px #ff0000 inset;
+  border: 2px solid #ff0000;
+  border-radius: 20px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 .--player2 {
-  background-color: blue;
+  background-color: transparent;
+  box-shadow: 0px 0px 10px #3700ff inset;
+  border: 2px solid #1900ff;
+  border-radius: 20px;
 }
 .imge-players {
   width: 150px;
@@ -81,7 +87,7 @@
   color: #d7f4ff;
 }
 .shadow {
-  box-shadow: 5px -5px 20px 1px #ff1493, -5px 5px 20px 1px #0cfff4;
+  box-shadow: 5px -5px 20px 1px #ff0000, -5px 5px 20px 1px #3700ff;
 }
 .text-shadow {
   color: #fff;
@@ -123,4 +129,58 @@
   background-size: 100% 100%;
   background-repeat: none;
 }
-
+.modal {
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all 0.5s;
+}
+.is-active {
+  display: flex;
+}
+.modal-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 10%;
+  margin-top: 15em;
+  width: 80%;
+  height: 30%;
+  background-color: transparent;
+  box-shadow: 0px 0px 10px #ff00f2 inset;
+  border: 2px solid #ff00b7;
+  border-radius: 20px;
+  gap: 20px;
+}
+.modal-container h2 {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 0px #fff, 0 0 0px #0fa,
+    0 0 0px #0fa, 0 0 0px #0fa, 0 0 0px #0fa, 0 0 0px #0fa;
+  font-weight: bold;
+  font-size: clamp(2em, 4vw, 5em);
+}
+.modal-container button {
+  background-color: transparent;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 0px #fff, 0 0 0px #0fa,
+    0 0 0px #0fa, 0 0 0px #0fa, 0 0 0px #0fa, 0 0 0px #0fa;
+  box-shadow: 0px 0px 10px #ff00f2 inset;
+  border: 2px solid #ff00b7;
+  font-weight: bold;
+  font-size: clamp(1.5em, 4vw, 2em);
+  width: 50%;
+  border-radius: 15px;
+}
+.modal-container button:hover {
+  scale: 1.1;
+  border-radius: 25px;
+}

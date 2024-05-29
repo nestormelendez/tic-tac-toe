@@ -37,14 +37,6 @@ let players = [
   },
 ];
 let board = ["", "", "", "", "", "", "", "", ""];
-/* let boardWinRow1 = ["x", "x", "x", "", "", "", "", "", ""];
-let boardWinRow2 = ["", "", "", "x", "x", "x", "", "", ""];
-let boardWinRow3 = ["", "", "", "", "", "", "x", "x", "x"];
-let boardWinColumn1 = ["x", "", "", "x", "", "", "x", "", ""];
-let boardWinColumn2 = ["", "X", "", "", "X", "", "", "X", ""];
-let boardWinColumn3 = ["", "", "X", "", "", "X", "", "", "X"];
-let boardWinDiagonally1 = ["X", "", "", "", "X", "", "", "", "X"];
-let boardWinDiagonally2 = ["", "", "X", "", "X", "", "X", "", ""]; */
 
 document.addEventListener("mouseover", (e) => {
   if (e.target.matches(".table-div")) {
@@ -69,8 +61,10 @@ document.addEventListener("click", (e) => {
     console.log(position);
 
     if (playerActive == playerOne) {
-        let imagePlayerDos = document.getElementById("image-player-2");
-      imagePlayerDos.classList.toggle("shadow");
+      let imagePlayerDos = document.getElementById("image-player-2");
+      let imagePlayerUno = document.getElementById("image-player-1");
+      imagePlayerDos.classList.add("shadow");
+      imagePlayerUno.classList.remove("shadow");
       select.classList.add("o");
       board[position] = "o";
       if (board[0] == "o" && board[1] == "o" && board[2] == "o") {
@@ -97,8 +91,11 @@ document.addEventListener("click", (e) => {
       if (board[2] == "o" && board[5] == "o" && board[8] == "o") {
         console.log(`ganaste ${playerActive.name}`);
       }
-      
-      playerActive = playerTwo;
+      if (playerActive == playerTwo) {
+        playerActive = playerOne;
+      } else {
+        playerActive = playerTwo;
+      }
     } else {
       select.classList.add("x");
       board[position] = "x";
@@ -126,10 +123,15 @@ document.addEventListener("click", (e) => {
       if (board[2] == "x" && board[5] == "x" && board[8] == "x") {
         console.log(`ganaste ${playerActive.name}`);
       }
-      let imagePlayerUno = document.getElementById("image-player-1");
-      imagePlayerUno.classList.toggle("shadow");
-
-      playerActive = playerOne;
+      let imagePlayerUnox = document.getElementById("image-player-1");
+      let imagePlayerDosx = document.getElementById("image-player-2");
+      imagePlayerUnox.classList.add("shadow");
+      imagePlayerDosx.classList.remove("shadow");
+      if (playerActive == playerOne) {
+        playerActive = playerTwo;
+      } else {
+        playerActive = playerOne;
+      }
     }
   }
 
@@ -203,31 +205,3 @@ function selectPlayer2(players, nombre) {
   }
   return playerTwo;
 }
-
-/* function theWinnerIs(tablero, jugadorActivo) {
-  if (tablero == boardWinRow1) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  if (tablero == boardWinRow2) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  if (tablero == boardWinRow3) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  if (tablero == boardWinColumn1) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  if (tablero == boardWinColumn2) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  if (tablero == boardWinColumn3) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  if (tablero == boardWinDiagonally1) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  if (tablero == boardWinDiagonally2) {
-    alert(`El ganador es ${jugadorActivo}`);
-  }
-  return alert(`El ganador es ${jugadorActivo}`);
-} */
