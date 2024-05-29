@@ -99,18 +99,28 @@
 }
 .input-name-player-1::placeholder,
 .input-name-player-2::placeholder {
-    color: #fff;
-    text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #0fa,
-      0 0 0px rgb(0, 0, 0), 0 0 0px #0fa, 0 0 0px #0fa, 0 0 0px #0fa;
-    
+  color: #fff;
+  text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #0fa,
+    0 0 0px rgb(0, 0, 0), 0 0 0px #0fa, 0 0 0px #0fa, 0 0 0px #0fa;
 }
-.o{
-    background-image: url(./assets/o.gif);
-    background-size: 100% 100%;
-    background-repeat: none;
+
+#input-name-player-1 option {
+  background: #250256;
+  color: rgb(243, 76, 76);
 }
-.x{
-    background-image: url(./assets/x.gif);
-    background-size: 100% 100%;
-    background-repeat: none;
+#input-name-player-2 option {
+  background: #250256;
+  color: rgb(108, 108, 247);
 }
+
+.o {
+  background-image: url(./assets/o.gif);
+  background-size: 100% 100%;
+  background-repeat: none;
+}
+.x {
+  background-image: url(./assets/x.gif);
+  background-size: 100% 100%;
+  background-repeat: none;
+}
+
