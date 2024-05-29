@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La viejita</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./la_viejita.css">
+</head>
+<body>
+    <main class="main">
+        <header class="header">
+            <h1 class="text-shadow">Tic Tac Toe</h1>
+        </header>
+        <section class="container">
+            <article class="teams">
+                <div class="player">
+                    <div class="users">
+                        <input id="input-name-player-1" class="input-name-player-1 text-shadow" type="text" placeholder="Ingrese un jugador">
+                        <button class="btn btn-player-1 text-shadow">ingresar</button>
+                    </div>
+                    <div id="info-player-1" class="info-player-1">
+                        <img id="image-player-1" class="imge-players shadow" src="./assets/firulais.webp" alt="player-1">
+                        <h2 id="name-player-1">jugador1</h2>
+                        <span id="win-player-1" >victorias 0</span>
+                        <span id="lose-player-1">derrotas 0</span>
+                    </div>
+                </div>
+            </article>
+            <article class="play-ground"> 
+                <div class="table">
+                    <div class="table-div place-1" data-div="1"></div>
+                    <div class="table-div place-2" data-div="2"></div>
+                    <div class="table-div place-3" data-div="3"></div>
+                    <div class="table-div place-4" data-div="4"></div>
+                    <div class="table-div place-5" data-div="5"></div>
+                    <div class="table-div place-6" data-div="6"></div>
+                    <div class="table-div place-7" data-div="7"></div>
+                    <div class="table-div place-8" data-div="8"></div>
+                    <div class="table-div place-9" data-div="9"></div>
+                </div>
+            </article>
+            <article class="teams">
+                <div class="player --player2">
+                    <div class="users">
+                        <input id="input-name-player-2" class="input-name-player-2 text-shadow" type="text" placeholder="Ingrese un jugador">
+                        <button class="btn btn-player-2 text-shadow">ingresar</button>
+                    </div>
+                    <div id="info-player-2" class="info-player-2">
+                        <img id="image-player-2" class="imge-players shadow" src="./assets/gasper.webp" alt="player-2">
+                        <h2 id="name-player-2">jugador2</h2>
+                        <span id="win-player-2" >victorias 0</span>
+                        <span id="lose-player-2">derrotas 0</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <footer class="footer">
+programmed by Nestor Melendez</footer>
+    </main>
+    <script src="./la_viejita.js"></script>
+</body>
+</html>
