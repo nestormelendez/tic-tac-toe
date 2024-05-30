@@ -37,6 +37,7 @@ let players = [
   },
 ];
 let board = ["", "", "", "", "", "", "", "", ""];
+let isWin = false
 
 document.addEventListener("mouseover", (e) => {
   if (e.target.matches(".table-div")) {
@@ -121,6 +122,9 @@ document.addEventListener("click", (e) => {
       } else {
         playerActive = playerTwo;
       }
+      if (isWin) {
+        return
+      }
       if (
         !board[0] == "" &&
         !board[1] == "" &&
@@ -196,6 +200,9 @@ document.addEventListener("click", (e) => {
       } else {
         playerActive = playerOne;
       }
+      if (isWin) {
+        return
+      }
       if (
         !board[0] == "" &&
         !board[1] == "" &&
@@ -266,6 +273,7 @@ document.addEventListener("click", (e) => {
     }
   }
   if (e.target.matches(".new-game")) {
+    isWin = false
     main.innerHTML = "";
     board = [];
   }
@@ -289,6 +297,7 @@ function selectPlayer2(players, nombre) {
 }
 
 function modalWin() {
+    isWin = true
   main.innerHTML = `
             <div is="modal" class="modal is-active">
                 <div class="modal-container">
