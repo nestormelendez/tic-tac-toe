@@ -1,7 +1,7 @@
 let infoPlayerInterfaceOne = document.getElementById("info-player-1");
 let infoPlayerInterfaceTwo = document.getElementById("info-player-2");
-
-/* let imagePlayerDos = document.getElementById("image-player-2"); */
+let clearTable = document.getElementById("table");
+let main = document.getElementById("main");
 
 let playerActive = []; //problema de logica pienso que tengo que agregar una clase a los player para que sea visualmente se;alado como activo ademas intercambiar esa clase luego de hacer click en un div
 let playerOne = [];
@@ -63,74 +63,152 @@ document.addEventListener("click", (e) => {
     if (playerActive == playerOne) {
       let imagePlayerDos = document.getElementById("image-player-2");
       let imagePlayerUno = document.getElementById("image-player-1");
+
       imagePlayerDos.classList.add("shadow");
       imagePlayerUno.classList.remove("shadow");
       select.classList.add("o");
       board[position] = "o";
       if (board[0] == "o" && board[1] == "o" && board[2] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[3] == "o" && board[4] == "o" && board[5] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[6] == "o" && board[7] == "o" && board[8] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[0] == "o" && board[4] == "o" && board[8] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[2] == "o" && board[4] == "o" && board[6] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[0] == "o" && board[3] == "o" && board[6] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[1] == "o" && board[4] == "o" && board[7] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[2] == "o" && board[5] == "o" && board[8] == "o") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (playerActive == playerTwo) {
         playerActive = playerOne;
       } else {
         playerActive = playerTwo;
       }
+      if (
+        !board[0] == "" &&
+        !board[1] == "" &&
+        !board[2] == "" &&
+        !board[3] == "" &&
+        !board[4] == "" &&
+        !board[5] == "" &&
+        !board[6] == "" &&
+        !board[7] == "" &&
+        !board[8] == ""
+      ) {
+        newTable();
+        modalDraw();
+      }
     } else {
       select.classList.add("x");
       board[position] = "x";
       if (board[0] == "x" && board[1] == "x" && board[2] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[3] == "x" && board[4] == "x" && board[5] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[6] == "x" && board[7] == "x" && board[8] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[0] == "x" && board[4] == "x" && board[8] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[2] == "x" && board[4] == "x" && board[6] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[0] == "x" && board[3] == "x" && board[6] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[1] == "x" && board[4] == "x" && board[7] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       if (board[2] == "x" && board[5] == "x" && board[8] == "x") {
         console.log(`ganaste ${playerActive.name}`);
+        newTable();
+        modalWin();
+        countWin(playerActive);
       }
       let imagePlayerUnox = document.getElementById("image-player-1");
       let imagePlayerDosx = document.getElementById("image-player-2");
       imagePlayerUnox.classList.add("shadow");
       imagePlayerDosx.classList.remove("shadow");
+
       if (playerActive == playerOne) {
         playerActive = playerTwo;
       } else {
         playerActive = playerOne;
+      }
+      if (
+        !board[0] == "" &&
+        !board[1] == "" &&
+        !board[2] == "" &&
+        !board[3] == "" &&
+        !board[4] == "" &&
+        !board[5] == "" &&
+        !board[6] == "" &&
+        !board[7] == "" &&
+        !board[8] == ""
+      ) {
+        newTable();
+        modalDraw();
       }
     }
   }
@@ -187,6 +265,10 @@ document.addEventListener("click", (e) => {
       }
     }
   }
+  if (e.target.matches(".new-game")) {
+    main.innerHTML = "";
+    board = [];
+  }
 });
 
 function selectPlayer1(players, nombre) {
@@ -204,4 +286,41 @@ function selectPlayer2(players, nombre) {
     }
   }
   return playerTwo;
+}
+
+function modalWin() {
+  main.innerHTML = `
+            <div is="modal" class="modal is-active">
+                <div class="modal-container">
+                    <h2>El ganador es ${playerActive.name}</h2>
+                    <button class="new-game">Nuevo juego</button>
+                </div>
+            </div>
+            `;
+}
+function modalDraw() {
+  main.innerHTML = `
+              <div is="modal" class="modal is-active">
+                  <div class="modal-container">
+                      <h2>Empate</h2>
+                      <button class="new-game">Nuevo juego</button>
+                  </div>
+              </div>
+              `;
+}
+
+function newTable() {
+  clearTable.innerHTML = `<div class="table-div place-1" data-div="0"></div>
+    <div class="table-div place-2" data-div="1"></div>
+    <div class="table-div place-3" data-div="2"></div>
+    <div class="table-div place-4" data-div="3"></div>
+    <div class="table-div place-5" data-div="4"></div>
+    <div class="table-div place-6" data-div="5"></div>
+    <div class="table-div place-7" data-div="6"></div>
+    <div class="table-div place-8" data-div="7"></div>
+    <div class="table-div place-9" data-div="8"></div>
+              `;
+}
+function countWin(playerActive) {
+  playerActive.win++;
 }
